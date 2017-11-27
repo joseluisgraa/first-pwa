@@ -165,7 +165,7 @@
      * freshest data.
      */
     app.getForecast = function(key, label) {
-        var statement = 'select * from weather.forecast where woeid=' + key;
+        var statement = 'select * from weather.forecast where woeid=' + key + ' and u="c"';
         var url = 'https://query.yahooapis.com/v1/public/yql?format=json&q=' +
             statement;
         // TODO add cache logic here
@@ -276,7 +276,7 @@
      */
     var initialWeatherForecast = {
         key: '2459115',
-        label: 'New York, NY',
+        label: 'Twyford',
         created: '2016-07-22T01:00:00Z',
         channel: {
             astronomy: {
@@ -288,16 +288,16 @@
                     text: "Windy",
                     date: "Thu, 21 Jul 2016 09:00 PM EDT",
                     temp: 56,
-                    code: 24
+                    code: 11
                 },
                 forecast: [
-                    {code: 44, high: 86, low: 70},
-                    {code: 44, high: 94, low: 73},
-                    {code: 4, high: 95, low: 78},
-                    {code: 24, high: 75, low: 89},
-                    {code: 24, high: 89, low: 77},
-                    {code: 44, high: 92, low: 79},
-                    {code: 44, high: 89, low: 77}
+                    {code: 11, high: 86, low: 70},
+                    {code: 11, high: 94, low: 73},
+                    {code: 16, high: 95, low: 78},
+                    {code: 11, high: 75, low: 89},
+                    {code: 11, high: 89, low: 77},
+                    {code: 11, high: 92, low: 79},
+                    {code: 11, high: 89, low: 77}
                 ]
             },
             atmosphere: {
