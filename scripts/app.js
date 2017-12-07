@@ -342,5 +342,17 @@
         app.saveSelectedCities();
     }
 
-    // TODO add service worker code here
+    if ('serviceWorker' in navigator) {
+        console.log("I'm going to tregister a service worker");
+        console.log(navigator);
+        navigator.serviceWorker
+            .register('./service-worker.js')
+            .then(
+                function() {
+                    console.log('Service Worker Registered');
+                },
+                function() {
+                    console.log("ERROR");
+                });
+    }
 })();
